@@ -1,0 +1,23 @@
+ion-segment{
+    height: 45px;
+    margin-top: 1em;
+    --background: #161f83;
+    border-radius: 10px;
+
+    ion-segment-button{
+        min-width: 25px;
+        height: 25px;
+        color: rgb(79, 182, 216);
+
+        ion-label{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    }
+  }
+
+  h3{
+    margin-top: 1em;
+    text-align: center;
+  }
+

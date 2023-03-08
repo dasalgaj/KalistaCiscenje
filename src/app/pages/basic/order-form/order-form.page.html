@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border">
+  <div class="img_container">
+    <img height="150" src="./assets/imgs/kalista.png"/>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" color="background">
+
+  <div class="content-wrap">
+
+    <form (ngSubmit)="sendOrder()" [formGroup]="formOrder">
+      <ion-list color="background">
+
+         <ion-item class="input">
+          <ion-label position="stacked">{{ "ORDER_FORM.NAME" | translate}}*</ion-label>
+          <ion-input type="text" formControlName="first_name"></ion-input>
+        </ion-item> 
+
+        <div class="errors">
+          <span *ngIf="(first_name.dirty || first_name.touched) && first_name.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+        </div>
+
+
+        <ion-item class="input">
+          <ion-label position="stacked">{{ "ORDER_FORM.LAST_NAME" | translate}}*</ion-label>
+          <ion-input type="text" formControlName="last_name"></ion-input>
+        </ion-item>
+
+        <div class="errors">
+          <span *ngIf="(last_name.dirty || last_name.touched) && last_name.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+        </div>
+
+
+        <ion-item class="input">
+          <ion-label position="stacked">Datum*</ion-label>
+          <ion-input type="text" formControlName="date" [readonly]="true">{{ period_date }}</ion-input>
+        </ion-item>
+
+        <br/><br/>
+
+        <ion-item class="input">
+          <ion-label position="stacked">Poruka*</ion-label>
+          <ion-textarea type="text" formControlName="message"></ion-textarea>
+        </ion-item>     
+  
+        <div class="errors">
+          <span *ngIf="(message.dirty || message.touched) && message.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+        </div>
+
+      </ion-list>
+
+      <ion-button color="tertiary" type="submit" expand="block" class="top-space-10" [disabled]="!formOrder.valid">{{ "ADD_CAR.SAVE" | translate }}</ion-button>
+
+      <ion-button class="top-space-20" type="button" color="tertiary" expand="block" (click)="back()">
+        {{ "ORDER_FORM.BACK" | translate }}
+      </ion-button>
+
+    </form>
+
+
+
+
+  </div>
+
+</ion-content>

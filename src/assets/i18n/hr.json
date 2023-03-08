@@ -1,0 +1,147 @@
+{
+    "TABS": {
+        "ORDER": "Naruči",
+        "PRICE": "Cijenik",
+        "LOCATION": "Lokacija",
+        "CONTACT": "Kontakt",
+        "PROFILE": "Profil"
+    },
+    "ORDER_FORM": {
+        "BACK": "Odustani",
+        "CHOOSE_SERVICE": "Odaberite uslugu",
+        "SERVICE_CATEGORY": "Kategorija usluge",
+        "SERVICE": "Usluga",
+        "MY_DATA": "Moji osobni podaci",
+        "NAME": "Ime",
+        "LAST_NAME": "Prezime",
+        "SELECT_CAR": "Moje vozilo",
+        "CAR_MODEL": "Model vozila",
+        "CAR_LABEL": "Registarska oznaka",
+        "SAVE": "Spremi",
+        "NO_CARS2": "Nemate spremljenih automobila možete ih dodati na plusiću pored. Ovo polje je obavezno.",
+        "SUCCESS": "Uspješno ste rezervirali termin",
+        "UNSUCCESS": "Termin je zauzetTermin je zauzet"
+
+    },
+    "BUTTON": {
+        "LOGIN": "Logiraj se",
+        "LOGIN_2": "Login",
+        "REGISTER": "Niste član? Izradite račun",
+        "REGISTER_2": "Izradi račun",
+        "DELETE_USER": "Obrišite račun",
+        "CANCEL": "Odustani",
+        "OK": "OK",
+        "SEND": "Pošalji",
+        "FORGET_PASS": "Zaboravili ste lozinku?",
+        "ACCEPT": "Primjeni",
+        "CLOSE": "Zatvori",
+        "CANCEL_ORDER": "Otkaži moju rezervaciju"
+
+    },
+    "ADD_CAR": {
+        "TITLE": "Dodaj vozilo",
+        "ADD_CAR": "Dodaj vozilo",
+        "EDIT_CAR": "Ažuriraj vozilo",
+        "CAR_NAME": "Ime vozila",
+        "CAR_MODEL": "Model vozila",
+        "CAR_LABEL": "Registarska oznaka",
+        "SAVE": "Spremi",
+        "DELETE": "Obriši vozilo",
+        "SUCCESS": "Uspješno spremljeno",
+        "SUCCESS_DELETE": "Uspješno obrisano"
+    },
+    "MESSAGES": {
+        "CATCH_ERROR": "Greška kod dohvata podataka",
+        "SUCCESS_LOGOUT": "Uspješno ste se odjavili!",
+        "SUCCESS_LOGIN": "Uspješno ste se prijavili!",
+        "SERVER_ERROR": "Greška u postupku",
+        "USER_EXIST": "Uneseni e-mail je već rgistriran u našem sustavu."
+
+    },
+    "CONTACT": {
+        "SEND_EMAIL": "Pošalji e-mail",
+        "CALL": "Nazovi na telefon"
+    },
+    "LOGIN": {
+        "TITLE": "Login",
+        "USERNAME": "E-mail",
+        "PASSWORD": "Lozinka",
+        "NOT_LOGIN_TITLE": "Niste logirani",
+        "NOT_LOGIN": "Niste logirani. Da bi nastavili potrebno je logirati se!",
+        "LOGIN_MESSAGE": "Logirajte se kako bi koristili punu funkcionalnost.",
+        "FORGOT_PASS_MESAGE": "Upišite i pošaljite nam svoju e-mail adresu, a mi ćemo vam poslati novu lozinku.",
+        "LOGIN": "Prijavi se",
+        "REGISTER": "Registriraj se",
+        "LOGIN2": "Prijava",
+        "REGISTER2": "Registracija"
+    },
+    "UPDATE-PROFILE": {
+        "TITLE": "Ažuriranje profila",
+        "NAME": "Ime",
+        "SURNAME": "Prezime",
+        "PHONE": "Telefon",
+        "EMAIL": "E-mail",
+        "ALERT": "Nije moguće mijenjati korisničko ime",
+        "BUTTON": "Spremi",
+        "UPDATE": "Podaci su uspješno spremljeni."
+
+    },
+    "PROFILE": {
+        "MY_DATA": "Osobni podaci",
+        "NAME": "Ime",
+        "SURNAME": "Prezime",
+        "PHONE": "Telefon",
+        "EMAIL": "E-mail",
+        "CHANGE_DATA": "Promijeni podatke",
+        "DELETE_ACOUNT": "Obriši račun",
+        "ADD_CAR": "Dodaj vozilo",
+        "LOGOUT": "Odjavi se",
+        "DELETE_ACCOUNT": "Obrišite račun",
+        "DELETE_ACCOUNT_TEXT": "Brisanje računa je nepovratna akcija. Dali se sigurni da želite nastaviti?",
+        "NO_CARS": "Nemate spremljenih automobila"
+
+    },
+    "ORDER": {
+        "CHOOSE_PERIOD": "Izaberite jedan od slobodnih termina",
+        "CHANGE_DATE": "Promijeniti datum",
+        "CHEMICAL_CLEAN": "Kemijsko čišćenje",
+        "FREE_DAY": "Neradni dan!",
+        "OUT_OF_RANGE": "Nije dostupno!",
+        "NOT_AVAILABLE1": "Poštovani,<br> u odabranom terminu nije moguće rezervirati termin.",
+        "NOT_AVAILABLE2": "Poštovani,<br> već ste rezervirali ovaj termin.",
+        "NOT_AVAILABLE3": "Poštovani,<br> ovaj termin je nažalost zauzet. Molim izaberite drugi termin.",
+        "SUCCESS_DEL": "Uspješno ste obrisali termin"
+
+    },
+    "CHEMICAL_FORM": {
+        "TITLE": "Kemijsko čišćenje",
+        "OTHER_DATA": "Ostali podaci",
+        "DATE": "Datum",
+        "TIME": "Vrijeme",
+        "DESCRIPTION": "Opis"
+
+    },
+    "FORMS_ERROR": {
+        "EMAIL_REQUIRED": "E-mail adresa je obavezna",
+        "PASSWORD_REQUIRED": "Lozinka je obavezna. ",
+        "NAME_REQUIRED": "Ime je obavezno",
+        "LAST_NAME_REQUIRED": "Prezime je obavezno",
+        "PHONE_REQUIRED": "Telefon je obavezan",
+        "PHONE_INVALID": "Broj telefona nije ispravan",
+        "EMAIL_INVALID": "Upišite pravilnu e-mail adresu",
+        "PASSWORD_SHORT": "Lozinka je prekratka",
+        "PASSWORD_NOT_SAME": "Lozinka se razlikuje",
+        "PASSWORD_EASY": "Lozinka mora sadržavati velika i mala slova i barem jedan broj.",
+        "USER_EXIST": "E-mail adresa je zauzeta",
+        "ADDRESS_REQUIRED": "Adresa je obavezna",
+        "CITY_REQUIRED": "Grad je obavezan",
+        "ZIP_REQUIRED": "Poštanski broj je obavezan",
+        "COUNTRY_REQUIRED": "Država je obavezna",
+        "COUNTY_REQUIRED": "Županija je obavezna",
+        "WRONG_PASSWORD": "Kriva kombinacija lozinke i e-maila.",
+        "REQUIRED": "Ovo polje je obavezno"
+
+    }
+
+
+}

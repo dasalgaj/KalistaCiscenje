@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border">
+  <div class="img_container">
+    <img height="150" src="./assets/imgs/kalista.png"/>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" color="background">
+
+  <div class="content-wrap">
+    <div>
+      <div class="address" style="color: black;">
+        Kalista & Co.<br/>
+        Plješivička 54a,<br/>
+        Zagreb,<br/>
+        Hrvatska<br/>
+      </div>
+      <div class="phone_email" style="color: black">
+        +385 91 228 2828<br>
+        kalistaciscenje@gmail.com
+      </div>
+      <button class="btnInstagram" (click)="openInstagram('https://www.instagram.com/kalistaciscenje/?hl=en')">
+        <ion-icon class="iconInstagram" name="logo-instagram"></ion-icon>
+        <ion-label class="lblInstagram">Instagram</ion-label>
+      </button>
+      <button class="btnWhatsApp" (click)="openWhatsApp()">
+        <ion-icon class="iconWhatsApp" name="logo-whatsapp"></ion-icon>
+        <ion-label class="lblWhatsApp">WhatsApp</ion-label>
+      </button>
+      <ion-button class="btnPosaljiEmail" color="tertiary"  expand="block" (click)="sendEmail()">
+        {{ "CONTACT.SEND_EMAIL" | translate }}
+      </ion-button>
+      <ion-button class="btnNazoviTelefon" color="tertiary" expand="block" (click)="callNumber()">
+        {{ "CONTACT.CALL" | translate }}
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

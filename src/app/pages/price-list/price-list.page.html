@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <div class="img_container">
+    <img height="150" src="./assets/imgs/kalista.png"/>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" color="background">
+
+  <div class="content-wrap">
+    <div *ngIf="dataLoad">
+      <div class="price_list">
+       <ion-list no-lines class="data-list">
+          <ng-container *ngFor="let price of prices">
+
+            <ion-item color="tertiary" [hidden]="price.category_title_new == ''" class="header price-item" text-wrap>
+              Čišćenje
+            </ion-item>
+            <ion-item class="price-item" color="light" detail-none>
+              {{ price.title }}
+              <div slot="end">
+                {{ priceFormat(price.price) }}
+              </div>
+            </ion-item> 
+          </ng-container>
+        </ion-list> 
+      </div>
+    </div>
+  </div>
+  
+
+</ion-content>

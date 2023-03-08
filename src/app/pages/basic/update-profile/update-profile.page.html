@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ "UPDATE-PROFILE.TITLE" | translate }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="background">
+  <form (ngSubmit)="update()" [formGroup]="formUser">
+    <ion-list>
+      <ion-item class="input">
+        <ion-label position="stacked">{{ "UPDATE-PROFILE.NAME" | translate}}*</ion-label>
+        <ion-input type="text" formControlName="first_name"></ion-input>
+      </ion-item>
+
+      <div class="errors">
+        <span *ngIf="(first_name.dirty || first_name.touched) && first_name.errors?.required">{{ "FORMS_ERROR.NAME_REQUIRED" | translate }}</span>
+      </div>
+
+      <ion-item class="input">
+        <ion-label position="stacked">{{ "UPDATE-PROFILE.SURNAME" | translate}}*</ion-label>
+        <ion-input type="text" formControlName="last_name"></ion-input>
+      </ion-item>
+
+      <div class="errors">
+        <span *ngIf="(last_name.dirty || last_name.touched) && first_name.errors?.required">{{ "FORMS_ERROR.LAST_NAME_REQUIRED" | translate }}</span>
+      </div>
+
+      <ion-item class="input">
+        <ion-label position="stacked">{{ "UPDATE-PROFILE.PHONE" | translate}}*</ion-label>
+        <ion-input type="text" formControlName="phone"></ion-input>
+      </ion-item>
+
+      <div class="errors">
+        <span *ngIf="(phone.dirty || phone.touched) && phone.errors?.required">{{ "FORMS_ERROR.PHONE_REQUIRED" | translate }}</span>
+      </div>
+
+      <ion-item class="input">
+        <ion-label position="stacked">Adresa*</ion-label>
+        <ion-input type="text" formControlName="address"></ion-input>
+      </ion-item>
+
+      <div class="errors">
+        <span *ngIf="(address.dirty || address.touched) && address.errors?.required">Adresa je  obavezna</span>
+      </div>
+
+    </ion-list>
+
+    <ion-button color="tertiary" type="submit" expand="block" class="btnEditSave" [disabled]="!formUser.valid">{{ "UPDATE-PROFILE.BUTTON" | translate }}</ion-button>
+
+  </form>
+</ion-content>

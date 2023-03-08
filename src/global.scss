@@ -1,0 +1,92 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+ion-list{
+    background: none !important;
+}
+
+.top-space-10{
+    margin-top: 10px;
+}
+
+.top-space-20{
+    margin-top: 20px;
+}
+
+.top-space-30{
+    margin-top: 30px;
+}
+
+.top-space-50{
+    margin-top: 50px;
+}
+
+.img_container{
+    text-align: center;
+    width: 100%;
+//    height: 30%;
+}
+
+// .text_color{
+//     color: var(--ion-color-washtab);
+
+// }
+
+ion-tab-button{
+    font-size: 11px;
+
+
+    &.tab-selected .tab-button-background{
+        background-color: #b30000;
+        padding: 3px;
+        padding-left: 10px;
+        padding-right: 10px;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+
+
+    ion-icon{
+        font-size: 31px;
+    }
+}
+
+ion-item.input {
+    --ion-item-background: var(--ion-color-light);
+    border-radius: 10px;
+    border: var(--ion-color-medium) 1px solid;
+
+  }
+
+  div.errors{
+    min-height: 30px;
+    padding-left: 20px;
+    padding-top: 3px;
+    color: var(--ion-color-danger);
+    font-size: 90%;
+  }
+

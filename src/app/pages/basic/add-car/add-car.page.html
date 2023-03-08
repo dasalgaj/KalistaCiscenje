@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar color="washtab">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ page_title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="background">
+  <form (ngSubmit)="save()" [formGroup]="formCar">
+    <ion-list>
+      <ion-item class="input">
+        <ion-label position="stacked">{{ "ADD_CAR.CAR_NAME" | translate}}*</ion-label>
+        <ion-input type="text" formControlName="car_name"></ion-input>
+      </ion-item>
+
+      <div class="errors">
+        <span *ngIf="(car_name.dirty || car_name.touched) && car_name.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+      </div>
+
+      <ion-item class="input">
+        <ion-label position="stacked">{{ "ADD_CAR.CAR_MODEL" | translate}}*</ion-label>
+        <ion-input type="text" formControlName="car_model"></ion-input>
+      </ion-item>
+
+      <div class="errors">
+        <span *ngIf="(car_model.dirty || car_model.touched) && car_model.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+      </div>
+
+      <ion-item class="input">
+        <ion-label position="stacked">{{ "ADD_CAR.CAR_LABEL" | translate}}*</ion-label>
+        <ion-input type="text" formControlName="car_label"></ion-input>
+      </ion-item>
+
+      <div class="errors">
+        <span *ngIf="(car_label.dirty || car_label.touched) && car_label.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+      </div>
+    </ion-list>
+
+    <ion-button color="washbutton" type="submit" expand="block" class="top-space-10" [disabled]="!formCar.valid">{{ "ADD_CAR.SAVE" | translate }}</ion-button>
+
+    <ion-button *ngIf="showDelete" color="washtab" type="button" expand="block" class="top-space-10" (click)="deleteCar()">{{ "ADD_CAR.DELETE" | translate }}</ion-button>
+
+
+
+  </form>
+</ion-content>

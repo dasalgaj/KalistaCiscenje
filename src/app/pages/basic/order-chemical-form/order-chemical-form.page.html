@@ -1,0 +1,175 @@
+<ion-content class="ion-padding" color="background">
+
+  <div class="content-wrap">
+    <div class="img_container">
+      <img height="150" src="./assets/imgs/logo-praona.png"/>
+    </div>
+
+    <h2>{{ "CHEMICAL_FORM.TITLE" | translate }}</h2>
+
+
+    <form (ngSubmit)="sendOrder()" [formGroup]="formOrder">
+      <ion-list>
+
+
+        <ion-item color="washbutton"  class="header price-item" text-wrap>
+          {{ "ORDER_FORM.MY_DATA" | translate }}
+         </ion-item>
+
+         <ion-item class="input">
+          <ion-label position="stacked">{{ "ORDER_FORM.NAME" | translate}}*</ion-label>
+          <ion-input type="text" formControlName="first_name"></ion-input>
+        </ion-item> 
+
+        <div class="errors">
+          <span *ngIf="(first_name.dirty || first_name.touched) && first_name.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+        </div>
+
+
+
+        <ion-item class="input">
+          <ion-label position="stacked">{{ "ORDER_FORM.LAST_NAME" | translate}}*</ion-label>
+          <ion-input type="text" formControlName="last_name"></ion-input>
+        </ion-item>
+
+        <div class="errors">
+          <span *ngIf="(last_name.dirty || last_name.touched) && last_name.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+        </div>
+
+
+
+        <ion-item color="washbutton"  class="header price-item" text-wrap>
+          {{ "ORDER_FORM.SELECT_CAR" | translate }}
+         </ion-item>
+
+        <ion-grid class="ion-no-padding">
+          <ion-row class="ion-align-items-start">
+            <ion-col>
+
+              <ion-item class="input" *ngIf=(!noCars)>
+                <ion-label position="stacked">{{ "ORDER_FORM.SELECT_CAR" | translate}}*</ion-label>
+                <ion-select formControlName="select_car" (ionChange)="onItemSelection()">
+                  <ion-select-option  *ngFor="let car of myVehicles; let i = index" [value]="car.id">{{ car.car_name }}</ion-select-option>
+                </ion-select>        
+              </ion-item>
+
+              <div class="selectCar" *ngIf=(noCars)>
+                <app-callout [text]="no_cars_str" type="info" ></app-callout>
+              </div>
+
+              <div class="errors">
+                <span *ngIf="(select_car.dirty || select_car.touched) && select_car.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+              </div>
+
+
+            </ion-col>
+            <ion-col size="auto">
+
+              <ion-button class="add-car" fill="clear" (click)="addVehicle()">
+                <ion-icon slot="icon-only" name="add-outline" ></ion-icon>
+              </ion-button>
+
+              
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+        <ion-item class="input">
+          <ion-label position="stacked">{{ "ORDER_FORM.CAR_MODEL" | translate}}*</ion-label>
+          <ion-input type="text" formControlName="car_model"></ion-input>
+        </ion-item>
+
+        <div class="errors">
+          <span *ngIf="(car_model.dirty || car_model.touched) && car_model.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+        </div>
+
+
+        <ion-item class="input">
+          <ion-label position="stacked">{{ "ORDER_FORM.CAR_LABEL" | translate}}*</ion-label>
+          <ion-input type="text" formControlName="car_label"></ion-input>
+        </ion-item>
+
+        <div class="errors">
+          <span *ngIf="(car_label.dirty || car_label.touched) && car_label.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+        </div>
+
+
+        <ion-item color="washbutton"  class="header price-item" text-wrap>
+          {{ "CHEMICAL_FORM.OTHER_DATA" | translate }}
+         </ion-item>
+
+         <ion-item class="input">
+          <ion-label position="stacked">{{ "CHEMICAL_FORM.DATE" | translate}}*</ion-label>
+          <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+        </ion-item>
+
+        <div class="errors">
+        </div>
+
+
+
+
+        <ion-item class="input">
+          <ion-label position="stacked">{{ "CHEMICAL_FORM.TIME" | translate}}*</ion-label>
+          <ion-datetime-button datetime="time"></ion-datetime-button>
+
+        </ion-item>
+
+        <div class="errors">
+        </div>
+
+
+
+
+
+
+        <ion-item class="input">
+          <ion-label position="stacked">{{ "CHEMICAL_FORM.DESCRIPTION" | translate}}*</ion-label>
+          <ion-textarea formControlName="description"></ion-textarea>
+        </ion-item>
+
+        <div class="errors">
+          <span *ngIf="(description.dirty || description.touched) && description.errors?.required">{{ "FORMS_ERROR.REQUIRED" | translate }}</span>
+        </div>
+
+      </ion-list>
+
+      <ion-button color="washbutton" type="submit" expand="block" class="top-space-10" [disabled]="!formOrder.valid">{{ "ADD_CAR.SAVE" | translate }}</ion-button>
+
+      <ion-button class="top-space-20" type="button" color="washbutton" expand="block" (click)="back()">
+        {{ "ORDER_FORM.BACK" | translate }}
+      </ion-button>
+
+    </form>
+
+  </div>
+
+  <ion-modal [keepContentsMounted]="true" [cssClass]="'bottom-end'">
+    <ng-template>
+     <ion-datetime 
+     locale="hr"
+     presentation="date" 
+     id="datetime"
+     size="cover"
+     [min]="datePickerMin"
+     [(ngModel)]="searchISODateStr"
+     [showDefaultButtons]="true"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+  <ion-modal [keepContentsMounted]="true" [cssClass]="'bottom-end'">
+    <ng-template>
+     <ion-datetime 
+     locale="hr"
+     presentation="time" 
+     id="time"
+     size="cover"
+     [(ngModel)]="searchTimeStr"
+     [showDefaultButtons]="true"></ion-datetime>
+    </ng-template>
+  </ion-modal>
+
+
+</ion-content>

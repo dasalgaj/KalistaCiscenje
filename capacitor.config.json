@@ -1,0 +1,16 @@
+{
+	"appId": "com.prolink.kalistaciscenje",
+	"appName": "Kalista Čišćenje",
+	"webDir": "www",
+	"bundledWebRuntime": false,
+	"plugins": {
+		"SplashScreen": {
+		  "backgroundColor": "#ffffffff",
+		  "androidScaleType": "CENTER_CROP",
+		  "launchAutoHide": false
+		},
+		"PushNotifications": {
+			"presentationOptions": ["badge", "sound", "alert"]
+		}
+	  }
+}

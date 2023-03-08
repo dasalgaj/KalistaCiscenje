@@ -1,0 +1,41 @@
+<ion-header class="ion-no-border">
+  <div class="img_container">
+    <img height="150" src="./assets/imgs/kalista.png"/>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" color="background">
+
+  <h1 *ngIf="!dataCtrl.isLogin()" style="color: black; text-align: center;">NEMA ČIŠĆENJA</h1>
+
+  <ion-list *ngIf="dataCtrl.isLogin()">
+    <h1 style="color: black; margin: 0px;">Najavljena čišćenja</h1>
+    <ng-container *ngFor="let item of ordersNajavljeno">
+    <ion-card [ngClass]="{ 'green-color': item.status == 'accept', 'red-color': item.status == 'cancel' }" class="cleaningCard">
+      <ion-card-header>
+        <ion-card-title class="cleaningCardTitle">{{ item.orderDate }}</ion-card-title>
+        <ion-card-subtitle>{{ item.orderTime }}h</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content class="cleaningCardContent">{{ item.message }}</ion-card-content>
+    </ion-card>
+    <ion-button [ngClass]="{ 'hide' : item.status == 'accept' || item.status == 'cancel' }" class="btnOdustani" (click)="cancelMyOrders(item.orderDate)">ODUSTANI</ion-button>
+    <ion-button [ngClass]="{ 'hide' : item.status == 'accept' || item.status == 'cancel' }" class="btnPotvrdi" (click)="confirmMyOrders(item.orderDate)">POTVRDI</ion-button>
+  </ng-container>
+  </ion-list>
+
+  <cdk-virtual-scroll-viewport *ngIf="dataCtrl.isLogin()" itemSize="56" minBufferPx="900" maxBufferPx="1350">
+    <ion-list>
+      <h1 style="color: black; margin: 0px;">Arhiva čišćenja</h1>
+      <ion-card *cdkVirtualFor="let item of ordersArhivirano" class="cleaningCard">
+        <ion-card-header>
+          <ion-card-title class="cleaningCardTitle">{{ item.orderDate }}</ion-card-title>
+          <ion-card-subtitle>{{ item.orderTime }}h</ion-card-subtitle>
+        </ion-card-header>
+
+        <ion-card-content class="cleaningCardContent">{{ item.message }}</ion-card-content>
+      </ion-card>
+    </ion-list>
+  </cdk-virtual-scroll-viewport>
+
+</ion-content>

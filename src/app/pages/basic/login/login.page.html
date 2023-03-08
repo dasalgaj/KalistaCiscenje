@@ -1,0 +1,128 @@
+<ion-header class="ion-no-border">
+  <div class="img_container">
+    <img height="150" src="./assets/imgs/kalista.png"/>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" color="background">
+
+  <div class="content-wrap">
+
+    <div>
+      <ion-segment color="light" (ionChange)="changeType()" [(ngModel)]="pageType" value="login">
+        <ion-segment-button value="login">
+          <ion-label>{{ "LOGIN.LOGIN" | translate }}</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="register">
+          <ion-label>{{ "LOGIN.REGISTER" | translate }}</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+
+
+      <!-- LOGIN FORM -->
+      <div *ngIf="showLogin">
+        <form (ngSubmit)="login()" [formGroup]="formLogin">
+
+          <h3 style="color: black;">{{ "LOGIN.LOGIN2" | translate}}</h3>
+          <ion-list>
+            <ion-item class="input">
+              <ion-label position="stacked">{{ "LOGIN.USERNAME" | translate}}</ion-label>
+              <ion-input type="email" formControlName="username"></ion-input>
+            </ion-item>     
+
+            <div class="errors">
+              <span *ngIf="(username.dirty || username.touched) && username.errors?.required">{{ "FORMS_ERROR.EMAIL_REQUIRED" | translate }}</span>
+              <span *ngIf="(username.dirty || username.touched) && username.errors?.email">{{ "FORMS_ERROR.EMAIL_INVALID" | translate }}</span>
+            </div>
+
+            <ion-item  class="input" (click)="clearError()">
+              <ion-label position="stacked">{{ "LOGIN.PASSWORD" | translate}}</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>     
+
+            <div class="errors">
+              <span *ngIf="(password.dirty || password.touched) && password.errors?.required">{{ "FORMS_ERROR.PASSWORD_REQUIRED" | translate }}</span>
+              <span *ngIf="wrongPassword">{{ "FORMS_ERROR.WRONG_PASSWORD" | translate }}</span>
+            </div>
+          </ion-list>
+
+          <ion-button color="tertiary" type="submit" expand="block" class="top-space-10" [disabled]="!formLogin.valid">{{ "LOGIN.LOGIN" | translate }}</ion-button>
+
+          <ion-button *ngIf="showBack" color="tertiary" type="button" expand="block"  (click)="cancel()" class="top-space-10" >{{ "BUTTON.CANCEL" | translate }}</ion-button>
+
+        </form>
+      </div>
+
+
+      <!-- REGISTER FORM -->
+      <div *ngIf="showRegister">
+        <form (ngSubmit)="register()" [formGroup]="formRegister">
+
+          <h3 style="color: black;">{{ "LOGIN.REGISTER2" | translate}}</h3>
+          <ion-list>
+            <ion-item class="input">
+              <ion-label position="stacked">{{ "LOGIN.USERNAME" | translate}}</ion-label>
+              <ion-input type="email" formControlName="username"></ion-input>
+            </ion-item>     
+
+            <div class="errors">
+              <span *ngIf="(username_reg.dirty || username_reg.touched) && username_reg.errors?.required">{{ "FORMS_ERROR.EMAIL_REQUIRED" | translate }}</span>
+              <span *ngIf="(username_reg.dirty || username_reg.touched) && username_reg.errors?.email">{{ "FORMS_ERROR.EMAIL_INVALID" | translate }}</span>
+            </div>
+
+            <ion-item class="input">
+              <ion-label position="stacked">Ime</ion-label>
+              <ion-input type="text" formControlName="first_name"></ion-input>
+            </ion-item>     
+
+            <div class="errors">
+              <span *ngIf="(first_name_reg.dirty || first_name_reg.touched) && first_name_reg.errors?.required">Ime je obavezno</span>
+            </div>
+
+            <ion-item class="input">
+              <ion-label position="stacked">Prezime</ion-label>
+              <ion-input type="text" formControlName="last_name"></ion-input>
+            </ion-item>     
+
+            <div class="errors">
+              <span *ngIf="(last_name_reg.dirty || last_name_reg.touched) && last_name_reg.errors?.required">Prezime je obavezno</span>
+            </div>
+
+            <ion-item  class="input">
+              <ion-label position="stacked">{{ "LOGIN.PASSWORD" | translate}}</ion-label>
+              <ion-input type="password" formControlName="password"></ion-input>
+            </ion-item>     
+
+            <div class="errors">
+              <span *ngIf="(password_reg.dirty || password_reg.touched) && password_reg.errors?.required">{{ "FORMS_ERROR.PASSWORD_REQUIRED" | translate }}</span>
+              <span *ngIf="(password_reg.dirty || password_reg.touched) && password_reg.errors?.minlength">{{ "FORMS_ERROR.PASSWORD_SHORT" | translate }}</span>
+            </div>
+
+            <ion-item  class="input">
+              <ion-label position="stacked">Adresa</ion-label>
+              <ion-input type="address" formControlName="address"></ion-input>
+            </ion-item>     
+  
+            <div class="errors">
+              <span *ngIf="(address_reg.dirty || address_reg.touched) && address_reg.errors?.required">Adresa je obavezna</span>
+            </div>
+          </ion-list>
+
+          <ion-button color="tertiary" type="submit" expand="block" class="top-space-10" [disabled]="!formRegister.valid">{{ "LOGIN.REGISTER" | translate }}</ion-button>
+
+          <ion-button *ngIf="showBack" color="tertiary" type="button" expand="block"  (click)="cancel()" class="top-space-10" >{{ "BUTTON.CANCEL" | translate }}</ion-button>
+
+        </form>
+
+      </div>
+
+
+
+
+    </div>
+
+
+  </div>
+
+</ion-content>

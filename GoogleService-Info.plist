@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>967032500866-v81n36iqajksk14drv857k41a675o550.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.967032500866-v81n36iqajksk14drv857k41a675o550</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDJdCPoWdCMncMQ1sq_bbxYVgkBG1tKHMI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>967032500866</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>EPFZ3WXYUA.com.prolink.kalistaciscenje</string>
+	<key>PROJECT_ID</key>
+	<string>kalista-ciscenje</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kalista-ciscenje.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:967032500866:ios:8b67589fd758dc3107ba9b</string>
+</dict>
+</plist>

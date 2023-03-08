@@ -1,0 +1,57 @@
+.full_height,
+ion-slides{
+    margin-top: 2.5em;
+    height: 100%;
+}
+
+.login-icon{
+    font-size: 64px;
+    color:var(--ion-color-primary);
+}
+
+
+.header{
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+
+.price-item{
+    margin-top: 0.5em;
+    border-radius: 10px;
+}
+
+
+.price_list{
+    margin-top: 2em;
+}
+
+//BUTTONS
+.btnLogin{
+    height: 50px;
+    --border-radius: 10px 10px 10px 10px;
+    font-size: 20px;
+    text-transform: none;
+}
+
+.btnEditProfile{
+    height: 40px;
+    --border-radius: 10px 10px 10px 10px;
+    font-size: 20px;
+    text-transform: none;
+}
+
+.btnDelete{
+    height: 40px;
+    --border-radius: 10px 10px 10px 10px;
+    font-size: 20px;
+    text-transform: none;
+}
+
+.btnLogout{
+    height: 40px;
+    --border-radius: 10px 10px 10px 10px;
+    margin-top: 30%;
+    font-size: 20px;
+    text-transform: none;
+}

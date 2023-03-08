@@ -1,0 +1,118 @@
+<ion-header class="ion-no-border">
+  <div class="img_container">
+    <img height="150" src="./assets/imgs/kalista.png"/>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" color="background">
+
+  <div class="content-wrap">
+    <ng-container *ngIf="login">
+      <div class="ion-padding">
+
+        <ion-list no-lines class="data-list">
+          <ion-list-header>
+            {{ "PROFILE.MY_DATA" | translate }}:
+          </ion-list-header>
+          <ion-item class="price-item" color="light" detail-none>
+            <label>
+              {{ "PROFILE.NAME" | translate }}
+             </label>
+            <label slot="end">
+             {{ user_name }}
+            </label>
+        </ion-item>
+
+        <ion-item class="price-item" color="light" detail-none>
+          <label>
+            {{ "PROFILE.SURNAME" | translate }}
+           </label>
+          <label slot="end">
+           {{ user_surname }}
+          </label>
+        </ion-item>
+
+        <ion-item class="price-item" color="light" detail-none>
+          <label>
+            {{ "PROFILE.PHONE" | translate }}
+           </label>
+          <label slot="end">
+           {{ user_phone }}
+          </label>
+        </ion-item>
+
+        <ion-item class="price-item" color="light" detail-none>
+          <label>
+            Adresa
+           </label>
+          <label slot="end">
+           {{ user_address }}
+          </label>
+        </ion-item>
+
+        <ion-item class="price-item" color="light" detail-none>
+          <label>
+            {{ "PROFILE.EMAIL" | translate }}
+           </label>
+          <label slot="end">
+           {{ user_email }}
+          </label>
+        </ion-item>
+
+
+        </ion-list>
+
+        <ion-button color="tertiary" type="button" expand="block"  (click)="changeData()" class="btnEditProfile" >{{ "PROFILE.CHANGE_DATA" | translate }}</ion-button>
+
+        <ion-button color="tertiary" type="button" expand="block"  (click)="deleteAccount()" class="btnDelete" >{{ "PROFILE.DELETE_ACOUNT" | translate }}</ion-button>
+
+
+
+        <ion-list no-lines class="data-list" *ngIf="cars.length > 0">
+          <ion-item (click)="editCar(item)" *ngFor="let item of cars" class="price-item" color="light" detail-none>
+            <label>
+              {{ item.car_name }}
+             </label>
+            <label slot="end">
+              {{ item.car_label }}
+            </label>
+          </ion-item>
+        </ion-list>
+
+        <!--
+        <div *ngIf="cars.length == 0">
+          <app-callout [text]=no_cars_in_db type="info"></app-callout>
+        </div>
+
+
+
+        <ion-button color="tertiary" type="button" expand="block"  (click)="addCar()" class="top-space-10" >{{ "PROFILE.ADD_CAR" | translate }}</ion-button>
+        -->
+
+        <ion-button color="tertiary" type="button" expand="block"  (click)="logout()" class="btnLogout" >
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          {{ "PROFILE.LOGOUT" | translate }}</ion-button>
+
+
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="!login">
+      <div class="ion-padding full_height">
+        <ion-slides>
+          <ion-slide>
+            <div>
+              <ion-icon name="key-outline" class="login-icon" color="tertiary"></ion-icon>
+              <h1 style="color: black;">{{ "LOGIN.NOT_LOGIN_TITLE" | translate }}</h1>
+              <p style="color: black;">
+                {{ "LOGIN.NOT_LOGIN" | translate }}
+              </p>
+              <ion-button (click)="goToLogin()" class="btnLogin" color="tertiary" expand="block" >{{ "BUTTON.LOGIN" | translate }}</ion-button>
+            </div>
+          </ion-slide>
+        </ion-slides>
+      </div>
+    </ng-container>
+  </div>
+
+</ion-content>

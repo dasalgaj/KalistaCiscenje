@@ -1,0 +1,65 @@
+<ion-header class="ion-no-border">
+  <div class="img_container">
+    <img height="150" src="./assets/imgs/kalista.png"/>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" color="background">
+
+  <h2 style="color: black;">{{ period_display }}</h2>
+
+  <form (ngSubmit)="sendUpit()" [formGroup]="formUser">
+
+    <ion-list>
+      <ion-item class="input">
+        <ion-label position="stacked">Ime</ion-label>
+        <ion-input type="email" formControlName="first_name" [readonly]="isReadonly()"></ion-input>
+      </ion-item>
+
+      <div class="errors">
+        <span *ngIf="isSubmitted && errorControl.first_name.errors?.required">Ime je obavezno</span>
+      </div>
+
+      <ion-item class="input">
+        <ion-label position="stacked">Prezime</ion-label>
+        <ion-input type="text" formControlName="last_name" [readonly]="isReadonly()"></ion-input>
+      </ion-item>     
+
+      <div class="errors">
+        <span *ngIf="isSubmitted && errorControl.last_name.errors?.required">Prezime je obavezno</span>
+      </div>
+
+      <ion-item class="input">
+        <ion-label position="stacked">Adresa</ion-label>
+        <ion-input type="text" formControlName="address" [readonly]="isReadonly()"></ion-input>
+      </ion-item>
+
+      <div class="errors">
+        <span *ngIf="isSubmitted && errorControl.address.errors?.required">Adresa je obavezna</span>
+      </div>
+
+      <ion-item class="input">
+        <ion-label position="stacked">Datum</ion-label>
+        <ion-input type="text" formControlName="date" [readonly]="true"></ion-input>
+      </ion-item> 
+
+      <div class="errors">
+        <span *ngIf="isSubmitted && errorControl.date.errors?.required">Datum je obavezan</span>
+      </div>
+
+      <ion-item class="input">
+        <ion-label position="stacked">Poruka</ion-label>
+        <ion-textarea type="text" formControlName="message"></ion-textarea>
+      </ion-item>     
+
+      <div class="errors">
+        <span *ngIf="isSubmitted && errorControl.message.errors?.required">Poruka je obavezna</span>
+      </div>
+    </ion-list>
+
+    <ion-button class="btnDodajSliku" type="button" color="tertiary" expand="block" (click)="addImage()">Dodaj sliku</ion-button>
+    <ion-button class="btnPosaljiUpit" type="submit" expand="block">Pošalji upit</ion-button>
+
+  </form>
+
+</ion-content>

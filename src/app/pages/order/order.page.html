@@ -1,0 +1,85 @@
+<ion-header class="ion-no-border">
+  <div class="img_container">
+    <img height="150" src="./assets/imgs/kalista.png"/>
+  </div>
+</ion-header>
+
+<ion-content class="ion-padding" color="background">
+
+  <div class="content-wrap">
+    <div *ngIf="dataLoad">
+
+      <app-callout [hidden]=!freeDay [text]=free_day_str type="info"></app-callout>
+      <app-callout [hidden]=!outOfRange [text]=out_of_range_str type="info"></app-callout>
+
+      <div [hidden]="freeDay || outOfRange">
+
+        <ion-grid class="ion-no-padding date">
+          <ion-row class="ion-align-items-start">
+            <ion-col>
+              <h2 class="titleDate">{{ searchDateStr }}</h2>
+            </ion-col>
+            <ion-col>
+              <ion-button color="tertiary" expand="block" id="open-modal">
+                {{ "ORDER.CHANGE_DATE" | translate }}
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-modal trigger="open-modal"  [cssClass]="'bottom-end'">
+          <ng-template>
+            <ion-datetime 
+              locale="hr"
+              presentation="date" 
+              id="datetime"
+              size="cover"
+              [min]="datePickerMin"
+              [(ngModel)]="searchISODateStr"
+              (ionChange)="changeDate()"
+              [showDefaultButtons]="true"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+
+        <ion-list>
+          <ng-container *ngFor="let period of data; let i = index">
+          <ion-card [ngClass]="{ 'gray' : period.status == 'freeDay', 'sentOrderCard' : period.status == 'free' }"> 
+            <ion-card-header>
+              <ion-card-title class="sentOrderCardTitle">{{ period.date }}</ion-card-title>
+            </ion-card-header>
+          
+            <ion-card-content class="sentOrderCardContent">
+              <h2 [ngClass]="{ 'hide' : period.status == 'free' }" style="font-weight: bold;">Neradni dan</h2>
+              <div class="divSquares" *ngFor="let item of counter(period.number_of_slots); let i = index" (click)="openOrder(period)">
+                <ion-icon [ngClass]="{ 'iconSquareGreen' : period.squares[i] == true, 'iconSquareRed' : period.squares[i] == false}" name="square"></ion-icon>
+              </div>
+            </ion-card-content>
+          </ion-card>
+          </ng-container>
+        </ion-list>
+
+      </div>
+    </div>
+  </div>
+
+  <ion-modal class="modal-transparent" [isOpen]="isModalOpen"  (willDismiss)="onWillDismiss($event)">
+    <ng-template>
+      <ion-content class="ion-padding">
+
+        <h3 [innerHTML]=modal_text class="modal_text"></h3>
+
+        <ion-button color="tertiary"  expand="block" (click)="modalCancel()" style="margin-top:30px;">
+          {{ "BUTTON.OK" | translate }}
+        </ion-button>
+
+        <!-- OTKAZI REZERVACIJU
+        <ion-button *ngIf="show_cancel_order" color="tertiary"  expand="block" (click)="cancelOrder()" style="margin-top:30px;">
+          {{ "BUTTON.CANCEL_ORDER" | translate }}
+        </ion-button>
+        -->
+
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>

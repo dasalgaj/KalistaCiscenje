@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "967032500866",
+    "project_id": "kalista-ciscenje",
+    "storage_bucket": "kalista-ciscenje.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:967032500866:android:ce0d4dfc6d17fc6707ba9b",
+        "android_client_info": {
+          "package_name": "com.prolink.kalistaciscenje"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "967032500866-5q2q561jdonnepg12tjuc5epdkjbc6lm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxP-yJ5h9pzJW_MB4oVNg5IkdgYZy34AY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "967032500866-5q2q561jdonnepg12tjuc5epdkjbc6lm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "967032500866-cmdtr27d613u89lvs24omg6doi2ot34s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.prolink.kalistaciscenje"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,53 @@
+cdk-virtual-scroll-viewport{
+    height: 100%;
+    width: 100%;
+}
+
+.hide{
+    display: none;
+}
+
+.green-color{
+    border-bottom: 5px solid green;
+}
+
+.red-color{
+    border-bottom: 5px solid red;
+}
+
+//ION-CARDS
+.cleaningCard{
+    background-color: white;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+//ION-CARD-TITLES
+.cleaningCardTitle{
+    color: black;
+}
+
+//ION-CARD-CONTENT
+.cleaningCardContent{
+    color: black;
+}
+
+//BUTTONS
+.btnOdustani{
+    height: 40px;
+    width: 150px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 35px;
+    --background: rgb(179, 3, 3);
+}
+
+.btnPotvrdi{
+    float: right;
+    height: 40px;
+    width: 150px;
+    font-size: 16px;
+    margin-top: 10px;
+    --background: green;
+}
