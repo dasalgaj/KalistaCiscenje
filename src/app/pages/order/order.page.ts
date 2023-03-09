@@ -192,8 +192,6 @@ export class OrderPage {
     var arrayDate = dateOneWeek.split(".");
     var resultDate = arrayDate[2] + "/" + arrayDate[1] + "/" + arrayDate[0];
 
-    console.log(resultDate);
-
     this.dataCtrl.showLoader().then(() => {
       let data = {
         function: 'getPeriods',
@@ -206,9 +204,6 @@ export class OrderPage {
         if(data.valid == true){
 
           this.data = data.data['list'];
-
-          console.log(this.data);
-
     
           this.dataLoad = true;
           this.dataCtrl.hideLoader();
